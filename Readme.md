@@ -11,7 +11,7 @@
 ![Sumanth Naga Payyavula](images/headshot.jpeg)
 
 
-## Individual Project 1 - Professional Profile Website
+## Project 1 - Portfolio Website
 
 **Overview**: The goal of this project is to create a front-end website on the github.io cloud service with a professional profile.
 I created a personal portfolio as part of this and put it up on the GitHub cloud. Utilizing JQuery, the react library, and simple JavaScript code are among the technical requirements. JavaScript cookies are used to remember the user and welcome them back to the website, and two public web APIs are integrated.
