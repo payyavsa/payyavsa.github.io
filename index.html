@@ -8,6 +8,15 @@
   <title>Sumanth Naga Payyavula Portfolio</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-73KX1F3QQZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-73KX1F3QQZ');
+</script>
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -26,7 +35,12 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
+  <style>
+    .weather-widget {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    </style>
 </head>
 
 <body>
@@ -93,9 +107,8 @@
               <div class="col-lg-6">
                 <ul>
                   <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>15 December 1999</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.example.com</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+1513 617 1610</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Cincinnait, Ohio</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Cincinnaiti, Ohio</span></li>
                 </ul>
               </div>
               <div class="col-lg-6">
@@ -110,6 +123,111 @@
                 With nearly three years of experience in Full Stack Development at a reputed Multinational Company, I bring a strong foundation in HTML, CSS, JavaScript, Angular, Java, SpringBoot, SpringMVC to the table. 
                 My expertise in these technologies has been honed through practical experience and a dedication to staying updated with the latest trends and best practices in the field.
             </p>
+            <div id="greetingCookie">Hi</div>
+            <h1>Random Quote Generator</h1>
+    <button id="generate-btn">Generate Quote</button>
+    <div id="quote"></div>
+    <div class="weather-widget">
+      <a class="weatherwidget-io" href="https://forecast7.com/en/39d10n84d51/cincinnati/" data-label_1="CINCINNATI" data-label_2="WEATHER" data-theme="original" >CINCINNATI WEATHER</a>
+    	<script>
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+        if(!d.getElementById(id)){js=d.createElement(s);js.id=id;
+        js.src='https://weatherwidget.io/js/widget.min.js';
+        fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+        </script>
+        </div>
+    <script>
+        const quotes = [
+            "The only way to do great work is to love what you do. - Steve Jobs",
+            "Innovation distinguishes between a leader and a follower. - Steve Jobs",
+            "Stay hungry, stay foolish. - Steve Jobs",
+            "Life is what happens when you're busy making other plans. - John Lennon",
+            "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
+            "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
+            "The only thing we have to fear is fear itself. - Franklin D. Roosevelt"
+        ];
+
+        function generateRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const quote = quotes[randomIndex];
+            document.getElementById('quote').textContent = quote;
+        }
+
+        document.getElementById('generate-btn').addEventListener('click', generateRandomQuote);
+    </script>
+    <span id="email" onclick="showOrHideEmail()" style="cursor: pointer; text-decoration: underline;">Display my Email</span>
+    <script src="/email.js"></script>
+    <canvas id="analog-clock" width="150" height="150" style="margin-left: 20px; background-color:#999;"></canvas>
+    <div id="digital-clock"></div>
+		<a href="/waph.html">Course Link</a>
+    <div class="text-primary" id="response"></div>
+		<script src="https://waph-uc.github.io/clock.js"></script>
+    <script type=text/javascript>
+			var canvas=document.getElementById("analog-clock");
+			var ctx=canvas.getContext("2d");
+			var radius = canvas.height/2;
+			ctx.translate(radius,radius);
+			radius=radius*0.90;
+			setInterval(drawClock,1000);
+			function drawClock(){
+				drawFace(ctx,radius);
+				drawNumbers(ctx,radius);
+				drawTime(ctx,radius);
+				}
+		function displayTime() {
+			document.getElementById('digital-clock').innerText=" The current Time is : "+ Date();
+		}
+		setInterval(displayTime,500);
+		function displayJoke(){
+		$.get("https://v2.jokeapi.dev/joke/Programming?type=single",function(result){
+				console.log("from joke API: "+ JSON.stringify(result));
+				if (result && result.joke) {
+				$("#response").text("Programming joke of the day: " +result.joke);
+				}
+				else{
+				 $("#response").text("Could not retrieve a joke at this time.");	
+				}
+			});
+		}
+		displayJoke();
+		setInterval(displayJoke,60*1000);
+        function setCookie(name, value, expiryDays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (expiryDays*24*60*60*1000));
+            let expires = "expires="+ d.toUTCString();
+            document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        }
+
+        function getCookie(name) {
+            let cookieName = name + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for(let i = 0; i <ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(cookieName) == 0) {
+                    return c.substring(cookieName.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function welcomeUser() {
+            const lastVisit = getCookie("lastVisit");
+            const greetingElement = document.getElementById("greetingCookie");
+            if (lastVisit) {
+                greetingElement.innerHTML = "Welcome back! Your last visit was on " + lastVisit + ".";
+            } else {
+                greetingElement.innerHTML = "Welcome to my portfolio!";
+            }
+            const now = new Date();
+            setCookie("lastVisit", now.toLocaleString(), 365);
+        }
+
+        welcomeUser();
+         </script>
           </div>
         </div>
 
