@@ -18,7 +18,7 @@ I created a personal portfolio as part of this and put it up on the GitHub cloud
 The use of an open-source bootstrap framework and the addition of a Google analytics page tracker are examples of non-technical requirements.
 
 Link to the repository:
-[https://github.com/payyavsa/payyavsa.github.io/blob/main/README.md](https://github.com/payyavsa/payyavsa.github.io/blob/main/README.md)
+[https://github.com/payyavsa/payyavsa.github.io/blob/main/README.md](https://github.com/payyavsa/payyavsa.github.io/blob/main/Readme.md)
 
 Portifolio Url
 [https://payyavsa.github.io/](https://payyavsa.github.io/)
